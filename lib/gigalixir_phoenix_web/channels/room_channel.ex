@@ -4,17 +4,13 @@ defmodule GigalixirPhoenixWeb.RoomChannel do
 
   def join(_, _params, socket) do
     send(self(), :counter)
-    socket =
-      socket
-      |> assign(:greeting, @greeting)
-      |> assign(:timer, 0)
-    {:ok, socket}
+    {:ok, assign(socket, :timer, 0)}
   end
 
-  def handle_info(:counter, %{assigns: %{timer: timer, greeting: greeting}} = socket) do
+  def handle_info(:counter, %{assigns: %{timer: timer}} = socket) do
     Process.send_after(self(), :counter, 1000)
     timer = timer + 1
-    push(socket, "count", %{timer: timer, greeting: greeting})
+    push(socket, "count", %{timer: timer, greeting: @greeting})
     {:noreply, assign(socket, :timer, timer)}
   end
 end
