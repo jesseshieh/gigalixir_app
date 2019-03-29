@@ -3,11 +3,11 @@ defmodule GigalixirPhoenixWeb.RoomChannel do
   import Logger
 
   defp greeting do 
-    "Hello"
+    "Hey!"
   end
 
   def join(_, _params, socket) do
-    Logger.debug "v1 join called"
+    Logger.debug "v2 join called"
     send(self(), :counter)
     socket =
       socket
@@ -25,7 +25,7 @@ defmodule GigalixirPhoenixWeb.RoomChannel do
   end
 
   def code_change(_old_vsn, socket, _extra) do
-    Logger.debug "v1 code_change called"
+    Logger.debug "v2 code_change called"
     {:ok, assign(socket, :greeting, greeting())}
   end
 end
