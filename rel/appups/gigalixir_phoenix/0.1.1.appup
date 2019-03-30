@@ -1,0 +1,9 @@
+{"0.1.1",
+ [{"0.1.0",
+   [{update,'Elixir.GigalixirPhoenixWeb.RoomChannel',{advanced,[]},[]}
+   ,{update,'Elixir.Phoenix.Channel.Server',{advanced,[]},[]}
+   ]}],
+ [{"0.1.0",
+   [{update,'Elixir.GigalixirPhoenixWeb.RoomChannel',{advanced,[]},[]}
+   ,{update,'Elixir.Phoenix.Channel.Server',{advanced,[]},[]}
+   ]}]}.
