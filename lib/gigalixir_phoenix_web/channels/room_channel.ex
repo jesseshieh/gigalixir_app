@@ -2,7 +2,9 @@ defmodule GigalixirPhoenixWeb.RoomChannel do
   use GigalixirPhoenixWeb, :channel
   import Logger
 
-  defp greeting do: "Hello" end
+  defp greeting do 
+    "Hello"
+  end
 
   def join(_, _params, socket) do
     Logger.debug "v1 join called"
