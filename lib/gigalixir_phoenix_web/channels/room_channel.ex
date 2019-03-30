@@ -14,6 +14,7 @@ defmodule GigalixirPhoenixWeb.RoomChannel do
   end
 
   def handle_info(:counter, %{assigns: %{timer: timer, greeting: greeting}} = socket) do
+    Logger.debug "v1 counter called with #{timer} and #{greeting}"
     Process.send_after(self(), :counter, 1000)
     timer = timer + 1
     push(socket, "count", %{timer: timer, greeting: greeting})
